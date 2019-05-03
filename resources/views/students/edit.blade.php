@@ -8,63 +8,93 @@
 
     {!! Form::open(['id' => 'dataForm', 'method' => 'PATCH', 'url' => '/students/' . $student->id ]) !!}
     <div class="form-group">
-        {!! Form::label('name', 'Name'); !!}
-        {!! Form::text('name', $student->name , ['placeholder' => 'Enter name', 'class' => 'form-control']); !!}
+        {!! Form::label('prenom', 'Prenom'); !!}
+        {!! Form::text('prenom', $student->prenom ,['class' => 'form-control']); !!}
     </div>
-
+    <div class="form-group">
+        {!! Form::label('nom', 'Nom'); !!}
+        {!! Form::text('nom', $student->nom ,['class' => 'form-control']); !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('age', 'Age'); !!}
+        {!! Form::number('age', $student->age ,['class' => 'form-control']); !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('mobile', 'Telephone'); !!}
+        {!! Form::text('mobile', $student->mobile ,['class' => 'form-control']); !!}
+    </div>
     <div class="form-group">
         {!! Form::label('email', 'Email') !!}
         {!! Form::email('email', $student->email, ['placeholder' => 'Enter email', 'class' => 'form-control']); !!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('campus', 'Campus'); !!}
-        {!! Form::url('campus', $student->campus, ['placeholder' => 'Enter facebook url', 'class' => 'form-control']); !!}
-    </div>
+        {!! Form::label('specialite', 'Specialité'); !!}
+        <!-- {!! Form::email('specialite', $student->specialite, ['class' => 'form-control']); !!} -->
 
-    <div class="form-group">
-        {!! Form::label('mobile', 'Mobile'); !!}
-        {!! Form::text('mobile', $student->mobile, ['placeholder' => 'Enter mobile', 'class' => 'form-control']); !!}
+    <select class="form-control m-bot15" name="specialite">
+        
+      <option >Stylisme</option> 
+      <option >Couture</option>  
+      <option >Creation de mode</option> 
+      <option >Manager mode</option>  
+      
+     </select>
     </div>
     <div class="form-group">
-        {!! Form::label('rendezvous', 'Rendez-vous'); !!}
-        {!! Form::date('rendezvous', $student->rendezvous, ['class' => 'form-control']); !!}
+        {!! Form::label('region', 'Région'); !!}
+       
+    <select class="form-control m-bot15" name="region">
+        
+      <option >Dakar</option> 
+      <option >Thies</option>  
+      <option >Louga</option> 
+      <option >Saint-louis</option>  
+      <option >Fatick</option>
+      <option >Kaolack</option>
+      <option >Ziguinchor</option>
+     </select>
+</div>
+<div class="form-group">
+        {!! Form::label('ville', 'Ville') !!}
+        {!! Form::text('ville', $student->ville, ['class' => 'form-control']); !!}
     </div>
-    
-    <div class="form-group">
-        {!! Form::label('etat', 'Etape'); !!}
-        {!! Form::number('etat', $student->etat, ['class' => 'form-control']); !!}
-    </div>
+    <!-- <div class="form-group">
+        {!! Form::label('diplome', 'Diplôme'); !!}
+       
+    <select class="form-control m-bot15" name="diplome">
+        
+      <option>BFEM</option> 
+      <option>BAC + 1</option>  
+      <option>BAC + 2</option> 
+      <option>BAC + 3</option>  
+      <option>BAC + 4</option>  
+      <option>BAC + 5</option>
+         
 
+     </select>
+</div>
+<div class="form-group">
+        {!! Form::label('diplomem', 'Diplôme en mode'); !!}
+       
+    <select class="form-control m-bot15" name="diplomem">
+        
+      <option>Pas de diplôme</option> 
+      <option>CAp</option>  
+      <option>BT</option> 
+      <option>BTS</option>  
+      <option>Licence</option>  
+      <option>Master</option>
+         
 
-    <h1 style="text-align:center;">Progression du dossier</h1>
-    <div class="form-group">
-        {!! Form::label('dossier', 'Nombre de dossier fournis'); !!}
-        {!! Form::number('dossier', $student->dossier, ['class' => 'form-control']); !!}
+     </select>
+</div>
+<div class="form-group">
+        {!! Form::label('file', 'File'); !!}
+        {!! Form::file('file', null, ['class' => 'form-control']); !!}
     </div>
-    <div class="form-group">
-        {!! Form::label('rvori', 'Rendez-vous orientation'); !!}
-        {!! Form::date('rvori', $student->rvori, ['class' => 'form-control']); !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('choix', 'Choix'); !!}
-        {!! Form::text('choix', $student->choix, [ 'class' => 'form-control']); !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('rvsim', 'Rendez-vous simulation'); !!}
-        {!! Form::date('rvsim', $student->rvsim, ['class' => 'form-control']); !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('rvcamp', 'Rendez-vous Campus'); !!}
-        {!! Form::date('rvcamp', $student->rvcamp, ['class' => 'form-control']); !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('reponse', 'Reponse des universités'); !!}
-        {!! Form::text('reponse', $student->reponse, [ 'class' => 'form-control']); !!}
-    </div>
-    
-    
-    <hr>
+     -->
+ 
     
     {!! Form::submit('Update', ['class' => 'btn btn-primary pull-right']); !!}
 
@@ -138,63 +168,7 @@
                 <div class="container">
 
                     <!-- Page-Title -->
-                   
-
-                    <div class="row" >
-                        <div class="col-md-12" >
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <table id="datatable-buttons" class="table table-striped table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        {{-- <th style="padding-left: 15px;">#</th> --}}
-                                                        <th>Dossier</th>
-                                                        <th>RV orientation</th>
-                                                        <th>Choix</th>
-                                                        <th>RV simulation</th>
-                                                        <th>RV campus</th>
-                                                        <th>Réponses</th>
-                                                    </tr>
-                                                </thead>
-                                            <tbody>
-                                                   
-            <tr>
-                {{-- <td style="padding-left: 15px;">{!! $student->id !!}</td> --}}
-                <td style="width:150px;"><div class="tiles-progress">
-                    <div class="m-t-20">
-                    <h5 class="text-uppercase">({{$student->dossier}}/{{$student->niv}}) <span class="pull-right" style="margin-top:-25px;">{{($student->dossier *100)/$student->niv}}%</span></h5>
-                        <div class="progress progress-sm m-0">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{($student->dossier *100)/$student->niv}}%">
-                                <span class="sr-only"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div></td>
-                <td style="width:150px;font-size:20px; text-align:center;">{{$student->rvori}}</td>
-                <td style="width:150px;font-size:20px; text-align:center;">{{$student->choix}}</td>
-                <td style="width:150px;font-size:20px; text-align:center;">{{$student->rvsim}}</td>
-               <td style="width:150px;font-size:20px; text-align:center;">{{$student->rvcamp}}</td>
-                <td style="width:150px;font-size:20px; text-align:center;">{{$student->reponse}}</td>
-               
-            
-              
-            </tr>
-        
-
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div> <!-- End Row -->
+          
 
 
                  

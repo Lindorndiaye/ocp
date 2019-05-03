@@ -4,7 +4,7 @@
 
     <h2>Read Data</h2>
     <hr/>
-<!-- <a class="btn btn-primary" href="generate-pdf" style="margin-bottom: 15px; float:right">contrat</a> -->
+<a class="btn btn-primary" href="generate-pdf" style="margin-bottom: 15px; float:right">contrat</a> 
 
     <a class="btn btn-primary" href="students/create" style="margin-bottom: 15px;">Ajouter un étudiant</a>
 

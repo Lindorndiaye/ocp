@@ -87,7 +87,7 @@ class StudentController extends Controller
         $student->update($data);
 
 	    Session::flash('message', $student['prenom'] . ' updated successfully');
-        return view('students/edit', ['student' => $student]);
+        return redirect('/students');
     }
 
     /**

@@ -9,12 +9,29 @@
     <?php echo Form::open(['id' => 'dataForm', 'method' => 'PATCH', 'url' => '/students/' . $student->id ]); ?>
 
     <div class="form-group">
-        <?php echo Form::label('name', 'Name');; ?>
+        <?php echo Form::label('prenom', 'Prenom');; ?>
 
-        <?php echo Form::text('name', $student->name , ['placeholder' => 'Enter name', 'class' => 'form-control']);; ?>
+        <?php echo Form::text('prenom', $student->prenom ,['class' => 'form-control']);; ?>
 
     </div>
+    <div class="form-group">
+        <?php echo Form::label('nom', 'Nom');; ?>
 
+        <?php echo Form::text('nom', $student->nom ,['class' => 'form-control']);; ?>
+
+    </div>
+    <div class="form-group">
+        <?php echo Form::label('age', 'Age');; ?>
+
+        <?php echo Form::number('age', $student->age ,['class' => 'form-control']);; ?>
+
+    </div>
+    <div class="form-group">
+        <?php echo Form::label('mobile', 'Telephone');; ?>
+
+        <?php echo Form::text('mobile', $student->mobile ,['class' => 'form-control']);; ?>
+
+    </div>
     <div class="form-group">
         <?php echo Form::label('email', 'Email'); ?>
 
@@ -23,73 +40,80 @@
     </div>
 
     <div class="form-group">
-        <?php echo Form::label('campus', 'Campus');; ?>
+        <?php echo Form::label('specialite', 'Specialité');; ?>
 
-        <?php echo Form::url('campus', $student->campus, ['placeholder' => 'Enter facebook url', 'class' => 'form-control']);; ?>
+        <!-- <?php echo Form::email('specialite', $student->specialite, ['class' => 'form-control']);; ?> -->
 
-    </div>
-
-    <div class="form-group">
-        <?php echo Form::label('mobile', 'Mobile');; ?>
-
-        <?php echo Form::text('mobile', $student->mobile, ['placeholder' => 'Enter mobile', 'class' => 'form-control']);; ?>
-
-    </div>
-    <div class="form-group">
-        <?php echo Form::label('rendezvous', 'Rendez-vous');; ?>
-
-        <?php echo Form::date('rendezvous', $student->rendezvous, ['class' => 'form-control']);; ?>
-
-    </div>
-    
-    <div class="form-group">
-        <?php echo Form::label('etat', 'Etape');; ?>
-
-        <?php echo Form::number('etat', $student->etat, ['class' => 'form-control']);; ?>
-
-    </div>
-
-
-    <h1 style="text-align:center;">Progression du dossier</h1>
-    <div class="form-group">
-        <?php echo Form::label('dossier', 'Nombre de dossier fournis');; ?>
-
-        <?php echo Form::number('dossier', $student->dossier, ['class' => 'form-control']);; ?>
-
+    <select class="form-control m-bot15" name="specialite">
+        
+      <option >Stylisme</option> 
+      <option >Couture</option>  
+      <option >Creation de mode</option> 
+      <option >Manager mode</option>  
+      
+     </select>
     </div>
     <div class="form-group">
-        <?php echo Form::label('rvori', 'Rendez-vous orientation');; ?>
+        <?php echo Form::label('region', 'Région');; ?>
 
-        <?php echo Form::date('rvori', $student->rvori, ['class' => 'form-control']);; ?>
+       
+    <select class="form-control m-bot15" name="region">
+        
+      <option >Dakar</option> 
+      <option >Thies</option>  
+      <option >Louga</option> 
+      <option >Saint-louis</option>  
+      <option >Fatick</option>
+      <option >Kaolack</option>
+      <option >Ziguinchor</option>
+     </select>
+</div>
+<div class="form-group">
+        <?php echo Form::label('ville', 'Ville'); ?>
 
-    </div>
-    <div class="form-group">
-        <?php echo Form::label('choix', 'Choix');; ?>
-
-        <?php echo Form::text('choix', $student->choix, [ 'class' => 'form-control']);; ?>
-
-    </div>
-    <div class="form-group">
-        <?php echo Form::label('rvsim', 'Rendez-vous simulation');; ?>
-
-        <?php echo Form::date('rvsim', $student->rvsim, ['class' => 'form-control']);; ?>
-
-    </div>
-    <div class="form-group">
-        <?php echo Form::label('rvcamp', 'Rendez-vous Campus');; ?>
-
-        <?php echo Form::date('rvcamp', $student->rvcamp, ['class' => 'form-control']);; ?>
+        <?php echo Form::text('ville', $student->ville, ['class' => 'form-control']);; ?>
 
     </div>
-    <div class="form-group">
-        <?php echo Form::label('reponse', 'Reponse des universités');; ?>
+    <!-- <div class="form-group">
+        <?php echo Form::label('diplome', 'Diplôme');; ?>
 
-        <?php echo Form::text('reponse', $student->reponse, [ 'class' => 'form-control']);; ?>
+       
+    <select class="form-control m-bot15" name="diplome">
+        
+      <option>BFEM</option> 
+      <option>BAC + 1</option>  
+      <option>BAC + 2</option> 
+      <option>BAC + 3</option>  
+      <option>BAC + 4</option>  
+      <option>BAC + 5</option>
+         
+
+     </select>
+</div>
+<div class="form-group">
+        <?php echo Form::label('diplomem', 'Diplôme en mode');; ?>
+
+       
+    <select class="form-control m-bot15" name="diplomem">
+        
+      <option>Pas de diplôme</option> 
+      <option>CAp</option>  
+      <option>BT</option> 
+      <option>BTS</option>  
+      <option>Licence</option>  
+      <option>Master</option>
+         
+
+     </select>
+</div>
+<div class="form-group">
+        <?php echo Form::label('file', 'File');; ?>
+
+        <?php echo Form::file('file', null, ['class' => 'form-control']);; ?>
 
     </div>
-    
-    
-    <hr>
+     -->
+ 
     
     <?php echo Form::submit('Update', ['class' => 'btn btn-primary pull-right']);; ?>
 
@@ -155,63 +179,7 @@
                 <div class="container">
 
                     <!-- Page-Title -->
-                   
-
-                    <div class="row" >
-                        <div class="col-md-12" >
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <table id="datatable-buttons" class="table table-striped table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        
-                                                        <th>Dossier</th>
-                                                        <th>RV orientation</th>
-                                                        <th>Choix</th>
-                                                        <th>RV simulation</th>
-                                                        <th>RV campus</th>
-                                                        <th>Réponses</th>
-                                                    </tr>
-                                                </thead>
-                                            <tbody>
-                                                   
-            <tr>
-                
-                <td style="width:150px;"><div class="tiles-progress">
-                    <div class="m-t-20">
-                    <h5 class="text-uppercase">(<?php echo e($student->dossier); ?>/<?php echo e($student->niv); ?>) <span class="pull-right" style="margin-top:-25px;"><?php echo e(($student->dossier *100)/$student->niv); ?>%</span></h5>
-                        <div class="progress progress-sm m-0">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo e(($student->dossier *100)/$student->niv); ?>%">
-                                <span class="sr-only"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div></td>
-                <td style="width:150px;font-size:20px; text-align:center;"><?php echo e($student->rvori); ?></td>
-                <td style="width:150px;font-size:20px; text-align:center;"><?php echo e($student->choix); ?></td>
-                <td style="width:150px;font-size:20px; text-align:center;"><?php echo e($student->rvsim); ?></td>
-               <td style="width:150px;font-size:20px; text-align:center;"><?php echo e($student->rvcamp); ?></td>
-                <td style="width:150px;font-size:20px; text-align:center;"><?php echo e($student->reponse); ?></td>
-               
-            
-              
-            </tr>
-        
-
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div> <!-- End Row -->
+          
 
 
                  
